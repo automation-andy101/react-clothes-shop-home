@@ -24,12 +24,12 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
 
     // If quantity is equal to 1, then remove the item from the cart
     if (exisitingCartItem.quantity === 1) {
-        return cartItems.filter(cartItem => cartItem.id === cartItemToRemove.id)
+        return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id);
     }
 
     // Return back cart itmes matching the cart item with the reduced quantity
     return cartItems.map((cartItem) => cartItem.id === cartItemToRemove.id ? { ...cartItem, quantity: cartItem.quantity - 1 } : cartItem );
-}
+};
 
 export const CartContext = createContext({
     isCartOpen: false,
