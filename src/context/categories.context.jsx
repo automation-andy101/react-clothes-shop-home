@@ -7,7 +7,6 @@ import { addCollectionAndDocument, getCategoriesAndDocuments } from '../utils/fi
 
 export const CategoriesContext = createContext({
     categoriesMap: {},
-
 });
 
 export const CategoriesProvider = ({children}) => {
