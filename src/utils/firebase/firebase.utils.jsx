@@ -33,7 +33,7 @@ export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googlePro
 
 export const db = getFirestore();
 
-export const addCollectionAndDocument = async (collectionKey, objectsToAdd, field) => {
+export const addCollectionAndDocument = async (collectionKey, objectsToAdd) => {
     const collectionRef = collection(db, collectionKey);
     const batch = writeBatch(db);
 
