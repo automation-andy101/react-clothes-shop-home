@@ -1,4 +1,4 @@
-// import { initializeApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app';
 import { getAuth, 
     signInWithRedirect,
     signInWithPopup,
@@ -11,16 +11,16 @@ import { getAuth,
 import { getFirestore, doc, getDoc, setDoc, collection, writeBatch, query, getDocs } from 'firebase/firestore';
 
 
-// const firebaseConfig = {
-//     apiKey: "AIzaSyBwXFdp37f6gVDGXMWyLwmVXEzXkMkaLRE",
-//     authDomain: "crwn-clothing-db-e9197.firebaseapp.com",
-//     projectId: "crwn-clothing-db-e9197",
-//     storageBucket: "crwn-clothing-db-e9197.appspot.com",
-//     messagingSenderId: "562267540587",
-//     appId: "1:562267540587:web:7aa0ee31db904e1e61b52e"
-// };
+const firebaseConfig = {
+    apiKey: "AIzaSyBwXFdp37f6gVDGXMWyLwmVXEzXkMkaLRE",
+    authDomain: "crwn-clothing-db-e9197.firebaseapp.com",
+    projectId: "crwn-clothing-db-e9197",
+    storageBucket: "crwn-clothing-db-e9197.appspot.com",
+    messagingSenderId: "562267540587",
+    appId: "1:562267540587:web:7aa0ee31db904e1e61b52e"
+};
   
-// const firebaseApp = initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
 googleProvider.setCustomParameters({
@@ -33,7 +33,7 @@ export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googlePro
 
 export const db = getFirestore();
 
-export const addCollectionAndDocument = async (collectionKey, objectsToAdd) => {
+export const addCollectionAndDocument = async (collectionKey, objectsToAdd, field) => {
     const collectionRef = collection(db, collectionKey);
     const batch = writeBatch(db);
 
